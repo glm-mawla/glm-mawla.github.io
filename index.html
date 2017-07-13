@@ -645,12 +645,25 @@
 	<!-- Easy PieChart -->
 	<script src="js/jquery.easypiechart.min.js"></script>
 	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdgT7Yv75VDBFHIaEZ5Cga4fUpFsPiNyc&sensor=true&callback=initMap"></script>
+	<script>
+      function initMap() {
+        var my_location = {lat: 23.80015129642728, lng: 90.35004436969757};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: my_location
+        });
+        var marker = new google.maps.Marker({
+          position: my_location,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdgT7Yv75VDBFHIaEZ5Cga4fUpFsPiNyc&sensor=true&callback=initMap"></script>
 	<script src="js/google_map.js"></script>
 	
 	<!-- Main -->
 	<script src="js/main.js"></script>
-
 	</body>
 </html>
 
